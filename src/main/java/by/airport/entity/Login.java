@@ -16,10 +16,10 @@ public class Login {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int loginId;
     @Column
-    public String visitorLogin;
+    public String customerLogin;
     @Column
-    private String visitorPass;
+    private String customerPass;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "visitorId")
-    private Visitor visitorId;
+    @JoinColumn(name = "customerId", unique = true)
+    private Customer customerId;
 }

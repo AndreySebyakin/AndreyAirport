@@ -3,7 +3,6 @@ package by.airport.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Builder
@@ -12,23 +11,22 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Visitor {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int visitorId;
+    private int customerId;
     @Column
-    private String visitorName;
+    private String customerName;
     @Column
-    private String visitorSername;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "passportId")
-    private Passport passportId;
+    private String customerSurname;
+    @Column
+    private String passport;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "roleId")
     private Role roleId;
 //    @OneToOne
 //    @PrimaryKeyJoinColumn
 //    private Login login;
-//    @OneToMany(mappedBy = "visitorId", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "customerId", cascade = CascadeType.ALL)
 //    private List<Ticket> tickets;
 }

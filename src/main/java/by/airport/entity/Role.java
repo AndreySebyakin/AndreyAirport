@@ -18,5 +18,5 @@ public class Role {
     @Column
     private String roleName;
 //    @OneToMany(mappedBy = "roleId")
-//    private List<Visitor> visitors;
+//    private List<Customer> customers;
 }

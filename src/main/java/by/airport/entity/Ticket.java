@@ -19,9 +19,9 @@ public class Ticket {
     @Column
     private String flightDate;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "roteId")
-    private Rote roteId;
+    @JoinColumn(name = "routeId")
+    private Route routeId;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "visitorId")
-    private Visitor visitorId;
+    @JoinColumn(name = "customerId")
+    private Customer customerId;
 }

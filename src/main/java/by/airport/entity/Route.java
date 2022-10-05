@@ -2,7 +2,6 @@ package by.airport.entity;
 
 import lombok.*;
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Builder
@@ -11,10 +10,10 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Rote {
+public class Route {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int roteId;
+    private int routeId;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "arrivalAirportId")
     private Airport arrivalAirportId;
@@ -26,6 +25,6 @@ public class Rote {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "airCompanyId")
     private AirCompany airCompanyId;
-//    @OneToMany(mappedBy = "roteId", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "routeId", cascade = CascadeType.ALL)
 //    private List<Ticket> tickets;
 }

@@ -1,12 +1,14 @@
 package by.airport.repository.impl;
 import by.airport.entity.City;
 import by.airport.repository.CityRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 import java.util.List;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CityRepositoryImplTest {
 
+    @Order(1)
     @Test
     void findById() {
         var expected = new City(2, "Minsk");
@@ -17,6 +19,7 @@ class CityRepositoryImplTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Order(2)
     @Test
     void findAll() {
         var expected = 9; //TODO заменить на 9
@@ -28,6 +31,7 @@ class CityRepositoryImplTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Order(3)
     @Test
     void save() {
         var expected = new City(10, "Vladivostok"); //TODO заменить на 10
@@ -43,6 +47,7 @@ class CityRepositoryImplTest {
         cityRepository.delete(actual);
     }
 
+    @Order(4)
     @Test
     void delete() {
         CityRepository cityRepository = new CityRepositoryImpl();

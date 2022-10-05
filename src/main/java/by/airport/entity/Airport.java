@@ -24,7 +24,7 @@ public class Airport {
     @JoinColumn(name = "cityId")
     private City cityId;
 //    @OneToMany(mappedBy = "arrivalAirportId")
-//    private List<Rote> rotesArrival;
+//    private List<Route> routesArrival;
 //    @OneToMany(mappedBy = "departureAirportId")
-//    private List<Rote> rotesDeparture;
+//    private List<Route> routesDeparture;
 }

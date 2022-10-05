@@ -1,12 +1,11 @@
 package by.airport.repository.impl;
 
-import by.airport.entity.Rote;
+import by.airport.entity.Route;
 import by.airport.entity.Ticket;
-import by.airport.entity.Visitor;
-import by.airport.repository.RoleRepository;
-import by.airport.repository.RoteRepository;
+import by.airport.entity.Customer;
+import by.airport.repository.RouteRepository;
 import by.airport.repository.TicketRepository;
-import by.airport.repository.VisitorRepository;
+import by.airport.repository.CustomerRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -16,11 +15,11 @@ class TicketRepositoryTest {
 
     @Test
     void findById() {
-        RoteRepository roteRepository = new RoteRepositoryImpl();
-        Rote rote2 = roteRepository.findById(2);
-        VisitorRepository visitorRepository = new VisitorRepositoryImpl();
-        Visitor visitor2 = visitorRepository.findById(2);
-        var expected = new Ticket(2, 454564, "2022-10-30", rote2, visitor2);
+        RouteRepository routeRepository = new RouteRepositoryImpl();
+        Route route2 = routeRepository.findById(2);
+        CustomerRepository customerRepository = new CustomerRepositoryImpl();
+        Customer customer2 = customerRepository.findById(2);
+        var expected = new Ticket(2, 454564, "2022-10-30", route2, customer2);
 
         TicketRepository ticketRepository = new TicketRepositoryImpl();
         var actual = ticketRepository.findById(2);

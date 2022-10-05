@@ -2,12 +2,14 @@ package by.airport.repository.impl;
 
 import by.airport.entity.AirCompany;
 import by.airport.repository.AirCompanyRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 import java.util.List;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class AirCompanyRepositoryImplTest {
 
+    @Order(1)
     @Test
     void findById() {
         var expected = new AirCompany(3, "LOT");
@@ -18,6 +20,7 @@ class AirCompanyRepositoryImplTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Order(2)
     @Test
     void findAll() {
         var expected = 4; //TODO заменить на 4
@@ -29,6 +32,7 @@ class AirCompanyRepositoryImplTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Order(3)
     @Test
     void save() {
         var expected = new AirCompany(5, "J7"); //TODO заменить на 5

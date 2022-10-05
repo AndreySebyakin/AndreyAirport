@@ -1,9 +1,9 @@
 package by.airport.repository.impl;
 
 import by.airport.entity.Login;
-import by.airport.entity.Visitor;
+import by.airport.entity.Customer;
 import by.airport.repository.LoginRepository;
-import by.airport.repository.VisitorRepository;
+import by.airport.repository.CustomerRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -12,8 +12,8 @@ class LoginRepositoryImplTest {
 
     @Test
     void findById() {
-        VisitorRepository visitorRepository = new VisitorRepositoryImpl();
-        Visitor visitor2 = visitorRepository.findById(2);
+        CustomerRepository visitorRepository = new CustomerRepositoryImpl();
+        Customer visitor2 = visitorRepository.findById(2);
         var expected = new Login(2, "SergeyD", "gnbrgn", visitor2);
 
         LoginRepository loginRepository = new LoginRepositoryImpl();

@@ -15,8 +15,8 @@ public class AirCompany {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int airCompanyId;
-    @Column
+    @Column(nullable = false)
     private String airCompanyName;
 //    @OneToMany(mappedBy = "airCompanyId", cascade = CascadeType.ALL)
-//    private List<Rote> rotes;
+//    private List<Route> routes;
 }
